@@ -5,6 +5,8 @@ using UnityEngine;
 public class Shooting : MonoBehaviour {
 	GameObject prefab;
 	public GameObject FireArm;
+	float ShootingTime = 0.5f;
+	float ShootAgain = 0;
 	// Use this for initialization
 	void Start () 
 	{
@@ -15,13 +17,15 @@ public class Shooting : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-	
-		if (Input.GetMouseButtonDown (0)) 
+		if (Time.time > ShootAgain) 
 		{
-			GameObject bullet = Instantiate (prefab) as GameObject;
-			bullet.transform.position = FireArm.transform.position + FireArm.transform.forward;
-			Rigidbody FiredBullet = bullet.GetComponent<Rigidbody> ();
-			FiredBullet.velocity = FireArm.transform.forward * 40;
+			if (Input.GetMouseButtonDown (0)) {
+				GameObject bullet = Instantiate (prefab) as GameObject;
+				bullet.transform.position = FireArm.transform.position + FireArm.transform.forward;
+				Rigidbody FiredBullet = bullet.GetComponent<Rigidbody> ();
+				FiredBullet.velocity = FireArm.transform.forward * 40;
+				ShootAgain = Time.time + ShootingTime;
+			}
 		}
 	}
 }

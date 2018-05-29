@@ -454,8 +454,6 @@ GameObject:
   - component: {fileID: 653539496}
   - component: {fileID: 653539495}
   - component: {fileID: 653539494}
-  - component: {fileID: 653539500}
-  - component: {fileID: 653539501}
   - component: {fileID: 653539502}
   - component: {fileID: 653539503}
   m_Layer: 0
@@ -563,31 +561,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &653539500
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 653539493}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 1.3849597, y: 1.9892607, z: 3.506962}
-  m_Center: {x: 0.01244092, y: -0.0053696632, z: 0.91804564}
---- !u!114 &653539501
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 653539493}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85d723c0bc56db24883d20557c646050, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PlayerHand: {fileID: 0}
-  ArmsLength: 0.8
 --- !u!114 &653539502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -974,6 +947,10 @@ Prefab:
       propertyPath: m_StaticEditorFlags
       value: 40
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 120055d99116eb841b1094ee928f67fa, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 120055d99116eb841b1094ee928f67fa, type: 3}
   m_IsPrefabParent: 0
@@ -994,7 +971,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4703073568347108, guid: 6a315be8d01f3fe47825970c339ff267, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 11.49
+      value: 11.555
       objectReference: {fileID: 0}
     - target: {fileID: 4703073568347108, guid: 6a315be8d01f3fe47825970c339ff267, type: 2}
       propertyPath: m_LocalRotation.x
@@ -1015,10 +992,6 @@ Prefab:
     - target: {fileID: 4703073568347108, guid: 6a315be8d01f3fe47825970c339ff267, type: 2}
       propertyPath: m_RootOrder
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1927336602737674, guid: 6a315be8d01f3fe47825970c339ff267, type: 2}
-      propertyPath: m_Name
-      value: Shield
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6a315be8d01f3fe47825970c339ff267, type: 2}

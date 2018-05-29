@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 95620527647116602}
   - component: {fileID: 54566370788754760}
   - component: {fileID: 64677009010479704}
+  - component: {fileID: 65671816138484268}
   - component: {fileID: 114139771485656328}
   m_Layer: 0
   m_Name: Shield
@@ -39,7 +40,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1927336602737674}
   m_LocalRotation: {x: -0, y: -0.60347533, z: -0, w: 0.79738176}
-  m_LocalPosition: {x: 3.69, y: 0.67, z: 11.49}
+  m_LocalPosition: {x: 3.69, y: 0.67, z: 11.555}
   m_LocalScale: {x: 46.201214, y: 46.201218, z: 445.2816}
   m_Children: []
   m_Father: {fileID: 0}
@@ -115,6 +116,18 @@ MeshCollider:
   m_CookingOptions: -1
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: ace857ac9d320a54cb84e058226dd99c, type: 3}
+--- !u!65 &65671816138484268
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1927336602737674}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.004554824, y: 0.03767782, z: 0.008976804}
+  m_Center: {x: 0.0076653296, y: 0.027541105, z: 2.9133918e-12}
 --- !u!95 &95620527647116602
 Animator:
   serializedVersion: 3
