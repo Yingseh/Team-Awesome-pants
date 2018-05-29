@@ -5,8 +5,10 @@ using UnityEngine;
 public class TheShield : MonoBehaviour {
 	GameObject Prefab;
 	public bool ShieldUp = false;
-	public int CoolDown = 10;
-	public int ShieldLowering = 5;
+	public float CoolDown = 10;
+	private float Cooled = 0;
+	public float ShieldLowering = 5;
+	private float ShielDown = 0;
 	GameObject shield;
 	// Use this for initialization
 	void Start () 
@@ -20,26 +22,25 @@ public class TheShield : MonoBehaviour {
 	{
 		if (ShieldUp == true) 
 		{Debug.Log ("counting down");
-			ShieldLowering = ShieldLowering--;
+			
 		}
-		if (Input.GetMouseButtonDown (1) && ShieldUp == false)
+		if (Time.time > Cooled) 
 		{
-			GameObject Shield = Instantiate (Prefab) as GameObject;
-			Shield.transform.position = transform.position + transform.forward * 3f;
-			ShieldUp = true;
-			ShieldLowering = 5;
-			CoolDown = 10;
+			if (Input.GetMouseButtonDown (1) && ShieldUp == false) {
+				GameObject Shield = Instantiate (Prefab) as GameObject;
+				Shield.transform.position = transform.position + transform.forward * 3f;
+				ShieldUp = true;
+				ShielDown = Time.time + ShieldLowering;
+
+				Cooled = Time.time + Cooled;
+			}
 		}
 		//ShieldLowering = ShieldLowering--;
-		if (ShieldLowering == 0) 
+		if (Time.time > ShielDown) 
 		{
-			
-			DestroyObject (shield);	
-			CoolDown = CoolDown--;
-		}
-		if (CoolDown == 0 && ShieldLowering == 0) 
-		{
+			//DestroyImmediate (shield,true);	
 			ShieldUp = false;
 		}
+
 	}
 }
