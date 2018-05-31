@@ -6,7 +6,7 @@ public class EnemyMovement : MonoBehaviour {
 	//[SerializeField]
 	GameObject Destination;
 	NavMeshAgent Driver;
-	public float DesAccuracy = 5.0f;
+	public float DesAccuracy = 2.0f;
 	private bool Chase = true;
 	// Use this for initialization
 	void Start () 
