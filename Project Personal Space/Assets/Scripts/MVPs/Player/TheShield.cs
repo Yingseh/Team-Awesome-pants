@@ -20,15 +20,23 @@ public class TheShield : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
+		/*if (Input.GetMouseButtonDown (1)) {
+			GameObject Shield = Instantiate (Prefab) as GameObject;
+			Shield.transform.position = transform.position + transform.forward *3;
+			shield.transform.localRotation = transform.localRotation;
+			//shield.transform.rotation = transform.rotation;
+		}*/
 		if (ShieldUp == true) 
 		{Debug.Log ("counting down");
 			
 		}
 		if (Time.time > Cooled) 
 		{
+			Debug.Log ("ready");
 			if (Input.GetMouseButtonDown (1) && ShieldUp == false) {
 				GameObject Shield = Instantiate (Prefab) as GameObject;
 				Shield.transform.position = transform.position + transform.forward * 3f;
+				shield.transform.rotation = transform.rotation;
 				ShieldUp = true;
 				ShielDown = Time.time + ShieldLowering;
 
