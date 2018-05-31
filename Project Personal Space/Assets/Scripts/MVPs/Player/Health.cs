@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class Health : EnemyMovement {
+using UnityEngine.SceneManagement;
+public class Health : MonoBehaviour {
 	public int PlayerHealth = 10;
 	public Text HealthUI;
+	public float AttackSpeed;
 	// Use this for initialization
 	void Start () 
 	{
@@ -12,22 +14,44 @@ public class Health : EnemyMovement {
 	}
 	
 	// Update is called once per frame
-	void Update()
+	void FixedUpdate()
 	{
+		CheckHealth();	
 		HealthUI.text = "" + PlayerHealth;
-		if (DesAccuracy <= 2) 
+
+
+	}
+	void OnTriggerStay(Collider Other)
+	{
+		if (Other.CompareTag("Enemy") ) 
 		{
-			
-			CheckHealth ();
+			;	
+			StartCoroutine (Attack());
+			Debug.Log ("strike");
+		
 		}
+
+	}
+	IEnumerator Attack()
+	{
+
+		yield return new WaitForSeconds (AttackSpeed);
+		Debug.Log ("hit");
+		PlayerHealth--;
+	
+		yield break;
 	}
 	public void CheckHealth () 
 	{
+	/*	Debug.Log ("update health");
+		HealthUI.text = "" + PlayerHealth;*/
+		Debug.Log ("check");
 		if (PlayerHealth <=0) 
 		{
-			Destroy (gameObject);
+			SceneManager.LoadScene ("MVP Testing", LoadSceneMode.Single);
 		}	
 
 	}
+
 	//void OnTriggerEnter
 }
