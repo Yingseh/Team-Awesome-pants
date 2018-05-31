@@ -5,53 +5,62 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class Health : MonoBehaviour {
 	public int PlayerHealth = 10;
+	public int CurrentHealth;
 	public Text HealthUI;
-	public float AttackSpeed;
+	Movement Mobility;
+	Shooting Weapon;
+	bool Damaged;
+	bool IsDead;
+	void Awake()
+	{
+		Weapon = GetComponent <Shooting> ();
+		Mobility = GetComponent <Movement> ();
+
+		CurrentHealth = PlayerHealth;
+		HealthUI.text = "" + CurrentHealth;
+	}
+	void Update()
+	{
+		if (IsDead == true) 
+		{
+			if(Input.anyKeyDown)
+			{
+				SceneManager.LoadScene ("MVP Testing", LoadSceneMode.Single);
+			}
+		}
+	}
+	public void TakenDamage(int Amount)
+	{
+		CurrentHealth -= Amount;
+		HealthUI.text = "" + CurrentHealth;
+
+
+		if (CurrentHealth<=0 && !IsDead) 
+		{
+			Death ();	
+
+		}
+		/*if (IsDead == true) 
+		{
+			if(Input.anyKeyDown)
+			{
+				SceneManager.LoadScene ("MVP Testing", LoadSceneMode.Single);
+			}
+		}*/
+	}
+	void Death()
+	{
+		IsDead = true;
+		Mobility.enabled = false;
+		Weapon.enabled = false;
+
+	}
 	// Use this for initialization
 	void Start () 
 	{
 		
 	}
-	
-	// Update is called once per frame
-	void FixedUpdate()
-	{
-		CheckHealth();	
-		HealthUI.text = "" + PlayerHealth;
 
-
-	}
-	void OnTriggerStay(Collider Other)
-	{
-		if (Other.CompareTag("Enemy") ) 
-		{
-			;	
-			StartCoroutine (Attack());
-			Debug.Log ("strike");
-		
-		}
-
-	}
-	IEnumerator Attack()
-	{
-
-		yield return new WaitForSeconds (AttackSpeed);
-		Debug.Log ("hit");
-		PlayerHealth--;
-	
-		yield break;
-	}
-	public void CheckHealth () 
-	{
-	/*	Debug.Log ("update health");
-		HealthUI.text = "" + PlayerHealth;*/
-		Debug.Log ("check");
-		if (PlayerHealth <=0) 
-		{
-			SceneManager.LoadScene ("MVP Testing", LoadSceneMode.Single);
-		}	
-
-	}
 
 	//void OnTriggerEnter
 }
