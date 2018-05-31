@@ -27,13 +27,16 @@ public class TheShield : MonoBehaviour {
 			//shield.transform.rotation = transform.rotation;
 		}*/
 		if (ShieldUp == true) 
-		{Debug.Log ("counting down");
+		{
+			Debug.Log ("counting down");
 			
 		}
 		if (Time.time > Cooled) 
 		{
 			Debug.Log ("ready");
-			if (Input.GetMouseButtonDown (1) && ShieldUp == false) {
+			if (Input.GetMouseButtonDown (1) && ShieldUp == false) 
+			{
+				Debug.Log ("deployed");
 				GameObject Shield = Instantiate (Prefab) as GameObject;
 				Shield.transform.position = transform.position + transform.forward * 3f;
 				shield.transform.rotation = transform.rotation;

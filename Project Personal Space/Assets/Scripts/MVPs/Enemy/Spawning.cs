@@ -15,6 +15,7 @@ public class Spawning : MonoBehaviour
 		public float Rate;
 	}	
 	public Waves[] AWave;
+	public Transform[] Gates;
 	int NWave = 0;
 
 	public float TBWaves = 5f;
@@ -96,8 +97,9 @@ public class Spawning : MonoBehaviour
 	void SpawningEnemy(GameObject _Enemy)
 	{
 		//spawn enemy
+		Transform _Sp = Gates [Random.Range(0, Gates.Length)];
 		GameObject Portal = Instantiate(Enemy) as GameObject;
-		Portal.transform.position = transform.position;
+		Portal.transform.position = _Sp.position;
 	}
 
 }

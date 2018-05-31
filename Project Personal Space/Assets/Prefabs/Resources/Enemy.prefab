@@ -126,9 +126,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e139843bbf9ea4419ecc7f15afb43f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Destination: {fileID: 0}
+  Gates:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   DesAccuracy: 2
-  Chase: 1
 --- !u!114 &114999072851399916
 MonoBehaviour:
   m_ObjectHideFlags: 1

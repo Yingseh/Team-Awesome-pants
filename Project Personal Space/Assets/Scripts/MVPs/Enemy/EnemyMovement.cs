@@ -3,22 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 public class EnemyMovement : MonoBehaviour {
-	[SerializeField]
-	public GameObject Destination;
+	//[SerializeField]
+	GameObject Destination;
 	NavMeshAgent Driver;
 	public float DesAccuracy = 5.0f;
-	public bool Chase = true;
+	private bool Chase = true;
 	// Use this for initialization
 	void Start () 
 	{
+		
 		Destination = GameObject.FindGameObjectWithTag ("Player");
 		Driver = this.GetComponent<NavMeshAgent> ();
 		if (Driver == null) 
 		{
 			Debug.LogError ("No driver in unit" + gameObject.name);
 		}
-
-
 	}
 	void FixedUpdate()
 	{
@@ -44,9 +43,11 @@ public class EnemyMovement : MonoBehaviour {
 				TargetVector = this.transform.position;
 				Driver.SetDestination (TargetVector);
 				Chase = false;
-			} 
 
+			} 
+		
 		}
 	}
+
 
 }
