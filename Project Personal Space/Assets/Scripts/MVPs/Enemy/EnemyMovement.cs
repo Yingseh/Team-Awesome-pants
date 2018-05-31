@@ -4,15 +4,17 @@ using UnityEngine;
 using UnityEngine.AI;
 public class EnemyMovement : MonoBehaviour {
 	[SerializeField]
-	public Transform Destination;
+	public GameObject Destination;
 	NavMeshAgent Driver;
 	public float DesAccuracy = 5.0f;
 	public bool Chase = true;
 	// Use this for initialization
 	void Start () 
 	{
+		Destination = GameObject.FindGameObjectWithTag ("Player");
 		Driver = this.GetComponent<NavMeshAgent> ();
-		if (Driver == null) {
+		if (Driver == null) 
+		{
 			Debug.LogError ("No driver in unit" + gameObject.name);
 		}
 
@@ -24,7 +26,7 @@ public class EnemyMovement : MonoBehaviour {
 		{
 			SetDestination ();
 		}
-		if(Vector3.Distance (Destination.position, this.transform.position) > DesAccuracy)
+		if(Vector3.Distance (Destination.transform.position, this.transform.position) > DesAccuracy)
 		{
 			
 			Chase = true;
@@ -38,7 +40,7 @@ public class EnemyMovement : MonoBehaviour {
 		{
 			Vector3 TargetVector = Destination.transform.position;
 			Driver.SetDestination (TargetVector);
-			if (Vector3.Distance (Destination.position, this.transform.position) < DesAccuracy) {
+			if (Vector3.Distance (Destination.transform.position, this.transform.position) < DesAccuracy) {
 				TargetVector = this.transform.position;
 				Driver.SetDestination (TargetVector);
 				Chase = false;

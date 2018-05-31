@@ -32,6 +32,7 @@ public class TheShield : MonoBehaviour {
 		}
 		if (Time.time > Cooled) 
 		{
+			Debug.Log ("ready");
 			if (Input.GetMouseButtonDown (1) && ShieldUp == false) {
 				GameObject Shield = Instantiate (Prefab) as GameObject;
 				Shield.transform.position = transform.position + transform.forward * 3f;
