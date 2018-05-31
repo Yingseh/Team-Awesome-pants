@@ -9,6 +9,7 @@ public class TheShield : MonoBehaviour {
 	private float Cooled = 0;
 	public float ShieldLowering = 5;
 	private float ShielDown = 0;
+	public Transform FaceTarget;
 	GameObject shield;
 	// Use this for initialization
 	void Start () 
@@ -38,18 +39,19 @@ public class TheShield : MonoBehaviour {
 			{
 				Debug.Log ("deployed");
 				GameObject Shield = Instantiate (Prefab) as GameObject;
-				Shield.transform.position = transform.position + transform.forward * 3f;
-				shield.transform.rotation = transform.rotation;
+				Shield.transform.position = FaceTarget.transform.position;
+				shield.transform.rotation = transform.localRotation;
+				//shield.transform.LookAt(FaceTarget);
 				ShieldUp = true;
 				ShielDown = Time.time + ShieldLowering;
 
-				Cooled = Time.time + Cooled;
+				Cooled = Time.time + CoolDown;
 			}
 		}
-		//ShieldLowering = ShieldLowering--;
+
 		if (Time.time > ShielDown) 
 		{
-			//DestroyImmediate (shield,true);	
+				
 			ShieldUp = false;
 		}
 
