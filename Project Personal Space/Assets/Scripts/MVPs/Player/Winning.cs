@@ -24,13 +24,18 @@ public class Winning : MonoBehaviour {
 	}
 	void Update()
 	{
-		if (Spawner.HasWon == true) {
+		if (PuaseMenu.TimeOut == true) 
+		{
+			Cursor.visible = true;
+			Cursor.lockState = CursorLockMode.None;
+		}
+		if (Spawner.HasWon == true ) {
 			Cursor.visible = true;
 			Cursor.lockState = CursorLockMode.None;
 			Spawner.enabled = false;
 			WinState.text = "Training over. Return to quaters.";
 		} 
-		else 
+		else if(PuaseMenu.TimeOut == false)
 		{
 			Cursor.visible = false;
 			Cursor.lockState = CursorLockMode.Locked;
