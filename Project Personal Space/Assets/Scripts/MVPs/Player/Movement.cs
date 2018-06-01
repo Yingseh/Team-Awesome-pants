@@ -20,8 +20,8 @@ public class Movement : MonoBehaviour {
 	void Update()
 	{
 		
-		Cursor.visible = false;
-		Cursor.lockState = CursorLockMode.Locked;
+		/*Cursor.visible = false;
+		Cursor.lockState = CursorLockMode.Locked;*/
 
 
 	}

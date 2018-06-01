@@ -22,6 +22,8 @@ GameObject:
   - component: {fileID: 33651137085097848}
   - component: {fileID: 23284649511017994}
   - component: {fileID: 95110521610928254}
+  - component: {fileID: 64710928741494670}
+  - component: {fileID: 54923820495066764}
   m_Layer: 0
   m_Name: Shield
   m_TagString: Untagged
@@ -35,7 +37,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1437277411850750}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0.00000002764136, y: -0.74621785, z: 0.000000010302755, w: 0.6657019}
   m_LocalPosition: {x: 3.74, y: 0.42067575, z: 14.52}
   m_LocalScale: {x: 20, y: 50, z: 525.45}
   m_Children: []
@@ -82,6 +84,35 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1437277411850750}
+  m_Mesh: {fileID: 4300000, guid: ace857ac9d320a54cb84e058226dd99c, type: 3}
+--- !u!54 &54923820495066764
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1437277411850750}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 122
+  m_CollisionDetection: 0
+--- !u!64 &64710928741494670
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1437277411850750}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: ace857ac9d320a54cb84e058226dd99c, type: 3}
 --- !u!95 &95110521610928254
 Animator:

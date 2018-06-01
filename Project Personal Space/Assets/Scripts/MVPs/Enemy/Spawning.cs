@@ -4,11 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Spawning : MonoBehaviour 
 {
-	public Text WinState;
-	public Button Finished;
+	
 	public enum SpawnState {Spawning, Waiting, Counting};
 	GameObject Enemy;
-	Winning Won;
+
 	[System.Serializable]
 	public class Waves
 	{
@@ -24,13 +23,15 @@ public class Spawning : MonoBehaviour
 	public float TBWaves = 5f;
 	public float WaveCD;
 	float ElifeCheck = 1f;
+	public bool HasWon;
 	SpawnState state = SpawnState.Counting;
 
 	void Start ()
 	{
+		
 		WaveCD = TBWaves;
 		Enemy = Resources.Load ("Enemy") as GameObject;
-		Won = GetComponent <Winning> ();
+
 	}
 
 	void Update ()
@@ -63,21 +64,16 @@ public class Spawning : MonoBehaviour
 
 		if (NWave + 1 > AWave.Length - 1) {
 		
-			Trained ();
+			HasWon = true;
 			//NWave = 0;
-			Debug.Log ("Reversing Time. Trying again...");
+			//Debug.Log ("Reversing Time. Trying again...");
 		} 
 		else 
 		{
 			NWave++;
 		}
 	}
-	public void Trained()
-	{
-//		Finished.enabled = true;
-		WinState.text = "Training over. Return to quaters.";
-		//Finished.enabled = true;
-	}
+
 	bool EnemyLS()
 	{
 		ElifeCheck -= Time.deltaTime;
