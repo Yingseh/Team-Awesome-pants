@@ -11,3 +11,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MVP testing.unity
     guid: 816dbef9ae6be7741a45b84eab112bfd
+  - enabled: 1
+    path: Assets/Scenes/Failed.unity
+    guid: 575f0d138a577ce478d8fca6c189d3fc

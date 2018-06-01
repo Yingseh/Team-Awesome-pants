@@ -25,7 +25,7 @@ public class Health : MonoBehaviour {
 		{
 			if(Input.anyKeyDown)
 			{
-				SceneManager.LoadScene ("MVP Testing", LoadSceneMode.Single);
+				SceneManager.LoadScene ("Failed", LoadSceneMode.Single);
 			}
 		}
 	}
