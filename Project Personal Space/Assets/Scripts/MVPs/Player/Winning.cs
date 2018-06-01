@@ -5,15 +5,16 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class Winning : MonoBehaviour {
 	public Text WinState;
-	public Button Finished;
+	public GameObject Finished;
 	Spawning Spawner;
 	void Awake()
 	{
+		Finished.SetActive (false);
 		Spawner = GetComponent<Spawning>();
 	}
 	public void Trained()
 	{
-		//Finished.enabled = true;
+		Finished.SetActive (true);
 		WinState.text = "Training over. Return to quaters.";
 		//Finished.enabled = true;
 	}
