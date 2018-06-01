@@ -18,5 +18,6 @@ public class ShieldsDown : MonoBehaviour
 			Destroy (gameObject);
 			//ShielDown = Time.time + ShieldLowering;
 		}
-	}
+     
+    }
 }
