@@ -209,7 +209,6 @@ Camera:
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -239,7 +238,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a76d90fb9eb222841a1a4adcea8d6019, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 93e1aaa0bb27daa4c9a8d1068ddef835, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -571,9 +570,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 120055d99116eb841b1094ee928f67fa, type: 3}
 --- !u!114 &486111340
@@ -971,7 +970,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WinState: {fileID: 1740815132}
-  Finished: {fileID: 2140903971}
+  Finished: {fileID: 0}
 --- !u!4 &927814648 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4188721120417560, guid: 6077f28c066e10a459e67c0f772d2851,
