@@ -209,6 +209,7 @@ Camera:
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -570,9 +571,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 0
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 120055d99116eb841b1094ee928f67fa, type: 3}
 --- !u!114 &486111340
@@ -1491,6 +1492,7 @@ GameObject:
   - component: {fileID: 2139055656}
   - component: {fileID: 2139055655}
   - component: {fileID: 2139055654}
+  - component: {fileID: 2139055657}
   m_Layer: 0
   m_Name: GM
   m_TagString: Untagged
@@ -1543,6 +1545,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2139055657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2139055653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a3c2c3bb28a6c4488363b066e2007fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PauseUI: {fileID: 0}
 --- !u!1 &2140903969
 GameObject:
   m_ObjectHideFlags: 0
