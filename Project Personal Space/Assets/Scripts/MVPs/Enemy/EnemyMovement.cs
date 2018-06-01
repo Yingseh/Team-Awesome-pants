@@ -2,8 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 public class EnemyMovement : MonoBehaviour {
-	//[SerializeField]
+	public int PlayerHealth = 10;
+	public Text HealthUI;
+	public GameObject Player;
+	[SerializeField]
 	GameObject Destination;
 	NavMeshAgent Driver;
 	public float DesAccuracy = 2.0f;
@@ -19,6 +23,7 @@ public class EnemyMovement : MonoBehaviour {
 			Debug.LogError ("No driver in unit" + gameObject.name);
 		}
 	}
+
 	void FixedUpdate()
 	{
 		if (Chase == true) 
@@ -33,6 +38,7 @@ public class EnemyMovement : MonoBehaviour {
 		}
 
 	}
+
 	private void SetDestination()
 	{
 		if (Destination != null) 
