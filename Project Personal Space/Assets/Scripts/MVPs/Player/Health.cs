@@ -23,10 +23,11 @@ public class Health : MonoBehaviour {
 	{
 		if (IsDead == true) 
 		{
-			if(Input.anyKeyDown)
+			SceneManager.LoadScene ("Failed", LoadSceneMode.Single);
+			/*if(Input.anyKeyDown)
 			{
 				SceneManager.LoadScene ("Failed", LoadSceneMode.Single);
-			}
+			}*/
 		}
 	}
 	public void TakenDamage(int Amount)
