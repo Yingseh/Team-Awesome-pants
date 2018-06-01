@@ -971,7 +971,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WinState: {fileID: 1740815132}
-  Finished: {fileID: 2140903971}
+  Finished: {fileID: 2140903969}
 --- !u!4 &927814648 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4188721120417560, guid: 6077f28c066e10a459e67c0f772d2851,
